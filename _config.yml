@@ -3,10 +3,10 @@
 #
 
 # Name of your site (displayed in the header)
-name: 网站名称
+name: 基线 Baseline
 
 # Short bio or description (displayed in the header)
-description: 一句话介绍
+description: 教你怎么建这样一个博客
 
 #
 # Flags below are optional
@@ -72,13 +72,16 @@ sharebuttons:
   nojavascript: true
 
 gitalk:
-  clientID: # 09a67b9b7e8204bb577e
-  clientSecret: # 3a3f8d975a81c202d7909562687bf7ebd161f155
-  repo: # Comments
-  owner: # DamoresClub
+  clientID: ac14c26bcf8a16e03567
+  clientSecret: 443574e2aa0e8bccf03adac267a82fdaa0a346c2
+  repo: blog
+  owner: diymysite
   admin:
     - DamoresClub
     - TerminusBot
+    - chinatimeline
+    - diymysite
+
 
 #
 # !! You don't need to change any of the configuration flags below !!
@@ -102,8 +105,6 @@ kramdown:
 
 strict_front_matter: true
 
-liquid:
-  error_mode: strict
 
 # Set the Sass partials directory, as we're using @imports
 sass:
@@ -114,14 +115,24 @@ plugins:
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-algolia
 
 # Exclude these files from your production _site
 exclude:
+  - vendor
   - Gemfile
   - Gemfile.lock
   - LICENSE
   - README.md
   - CNAME
+
+algolia:
+  application_id: AQ2NWA6FRT
+  index_name:     DIYMYSITE # You can replace that with whatever name you want
+  search_only_api_key: 533d855435d988fee73b330d3df4e41c
+  files_to_exclude: [404.md, about.md, README.md]
+
+destination: build
 
 future: false
 
